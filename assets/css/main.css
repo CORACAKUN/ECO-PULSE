@@ -142,15 +142,99 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
-.header {
-  --background-color: rgba(0, 0, 0, 0);
+
+/* Header Styling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Navigation Menu */
+.navmenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navmenu ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu ul li {
+  position: relative;
+}
+
+.navmenu ul li a {
+  text-decoration: none;
+  color: #533636;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navmenu ul li a:hover,
+.navmenu ul li a.active {
+  color: #00aaff;
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .navmenu ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    display: none;
+    padding: 10px 0;
+  }
+
+  .navmenu ul li {
+    text-align: center;
+  }
+
+  .navmenu ul.show {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+}
+
+/* .header {
+  --background-color: rgba(0, 0, 0, 0.156);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
+  padding: 5px 0;
   transition: all 0.5s;
   z-index: 997;
+  border: solid 1px red;
 }
 
 .header .logo {
@@ -167,19 +251,19 @@ h6 {
   margin: 0;
   font-weight: 300;
   color: var(--heading-color);
-}
+} */
 
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #6f6f6f;
+  --background-color: #6f6f6f74;
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Navmenu */
-.mobile-nav-toggle {
+/* .mobile-nav-toggle {
   color: var(--nav-color);
   position: fixed;
   top: 20px;
@@ -298,7 +382,7 @@ h6 {
   right: 0;
   background-color: var(--nav-mobile-background-color);
   transition: 0.3s;
-}
+} */
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -888,4 +972,55 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+.renewable-energy img {
+  width: 100%; /* Makes all images responsive */
+  height: 300px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Ensures images fill the space without distortion */
+  border-radius: 8px; /* Keeps rounded corners */
+}
+
+.challenge-item .icon i {
+  font-size: 75px; /* Adjust size as needed */
+  width: 100px;
+  height: 100px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 5px rgba(255, 0, 0, 0.495);;
+  margin: 20px auto;
+  border-radius: 50%;
+}
+
+.challenge-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.challenge-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.challenge-item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.challenge-item h3, .challenge-item p, .challenge-item h4 {
+  text-align: center;
 }
